@@ -1,8 +1,10 @@
 teamviewer:
   # TAG 12 or 13
-  image: albertalvarezbruned/teamviewer:TAG
+  image: albertalvarezbruned/teamviewer:12
   volumes:
     - '/tmp/.X11-unix:/tmp/.X11-unix'
     - '/dev/snd:/dev/snd'
+    - '$HOME/teamviewer/config/:/opt/teamviewer/config/'
+    - '$HOME/teamviewer/profile/:/opt/teamviewer/profile/'
   environment:
     - 'DISPLAY=:0'
