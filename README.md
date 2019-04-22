@@ -1,14 +1,7 @@
 # teamviewer
 
-to execute
-
-XAUTH=/tmp/.docker.xauth
-touch ${XAUTH}
-xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f ${XAUTH} nmerge -
-
-
-
-docker run -d -e DISPLAY \
-    -e XAUTHORITY=${XAUTHORITY} \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-   albertalvarezbruned/teamviewer
+## Disponible versions
+```
+xhost +local:docker && docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd -e 'DISPLAY=:0' albertalvarezbruned/teamviewer:12
+xhost +local:docker && docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd -e 'DISPLAY=:0' albertalvarezbruned/teamviewer:13
+```

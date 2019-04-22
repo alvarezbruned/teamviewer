@@ -1,0 +1,8 @@
+teamviewer:
+  # TAG 12 or 13
+  image: albertalvarezbruned/teamviewer:TAG
+  volumes:
+    - '/tmp/.X11-unix:/tmp/.X11-unix'
+    - '/dev/snd:/dev/snd'
+  environment:
+    - 'DISPLAY=:0'
